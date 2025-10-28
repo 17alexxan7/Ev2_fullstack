@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App Component', () => {
+  test('renderiza el componente App sin errores', () => {
+    render(<App />);
+    const linkElement = screen.getByText(/EL ESTUDIO/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+
+  test('renderiza el Navbar en la aplicación', () => {
+    render(<App />);
+    expect(screen.getByText('Inicio')).toBeInTheDocument();
+  });
 });
